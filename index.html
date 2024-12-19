@@ -246,11 +246,11 @@
         }
     </style>
 </head>
-<body>
+<body class="dark-mode">
     <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
 
     <header>
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFL5zraCJVLqw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688663855815?e=1740009600&v=beta&t=ES2aOTO8bJMCy17FvjR4c6FzN9CiVA1gzWKGWV_UJjo" alt="Abhishek Kumar" class="profile-img">
+        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFL5zraCJVLqw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688663855815?e=1740009600&v=beta&t=ES2aOTO8bJMCy17FvjR4c6FzN9CiVA1gzWKGWV_UJjo" alt="Abhishek Kumar" class="profile-img" >
         <h1>Abhishek Kumar</h1>
         <p class="title">Software Development Engineer & ML Researcher</p>
     </header>
@@ -345,7 +345,7 @@
             // Theme toggle
             const themeToggle = document.querySelector('.theme-toggle');
             themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle('dark-mode');
+                document.body.classList.toggle("dark-mode")
             });
 
             // Add hover effect to tech tags
