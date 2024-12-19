@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhishek Kumar - Software Developer & Researcher</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+        :root {
+            --primary-color: #6366f1;
+            --secondary-color: #4f46e5;
+            --accent-color: #ec4899;
+            --gradient-start: #6366f1;
+            --gradient-end: #ec4899;
+            --bg-color: #ffffff;
+            --text-color: #1f2937;
+            --secondary-bg: #f8fafc;
+            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #f6f8ff 0%, #ffffff 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+            padding: 4rem 0;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            margin-bottom: 1.5rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            color: white;
+            font-size: 1.4rem;
+            opacity: 0.9;
+        }
+
+        section {
+            background: var(--bg-color);
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease;
+            opacity: 1;
+            transform: translateY(0);
+            border: 1px solid rgba(99, 102, 241, 0.1);
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
+            transition: width 0.3s ease;
+        }
+
+        section:hover h2::after {
+            width: 100%;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--secondary-bg);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tech-tag:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .skill-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-item p {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .skill-bar {
+            height: 12px;
+            background: var(--secondary-bg);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+            width: 0;
+            border-radius: 6px;
+            transition: width 1s ease-out;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: var(--secondary-bg);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(10px);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+        }
+
+        .contact-item:hover a {
+            color: white;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        /* Dark mode styles */
+        body.dark-mode {
+            --bg-color: #0f172a;
+            --text-color: #e2e8f0;
+            --secondary-bg: #1e293b;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            header {
+                padding: 3rem 0;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .title {
+                font-size: 1.2rem;
+            }
+
+            section {
+                padding: 1.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+
+    <header>
+        <img src="D:\1688663855814.jpeg" alt="Abhishek Kumar" class="profile-img">
+        <h1>Abhishek Kumar</h1>
+        <p class="title">Software Development Engineer & ML Researcher</p>
+    </header>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi there! 👋 I’m a Software Development Engineer with a deep passion for Computer Vision and Deep Learning. My journey started at IIT Kharagpur, where I earned my M.Tech and delved into cutting-edge research in self-supervised learning techniques. Today, I thrive at the intersection of research and development, creating innovative solutions in machine learning.I specialize in designing systems that harness the power of contrastive learning and Siamese architectures to solve real-world problems. Whether it’s pushing the boundaries of self-supervised learning or building impactful industry-grade applications, I’m always up for a challenge! 🚀Feel free to explore my work, projects, and thoughts on all things tech and AI. Let’s connect and create something extraordinary together!</p>
+            <!-- <p>I'm a Software Development Engineer with a strong research background in Computer Vision and Deep Learning. Following my M.Tech from IIT Kharagpur, I've transitioned into industry while continuing my passion for research in self-supervised learning techniques. My expertise lies in developing innovative solutions using machine learning, particularly in contrastive learning and Siamese architectures.</p> -->
+            <div class="tech-stack">
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">Deep Learning</span>
+                <span class="tech-tag">Self-Supervised Learning</span>
+                <span class="tech-tag">Embedded System </span>
+                <span class="tech-tag">Software Development</span>
+            </div>
+        </section>
+
+        <section id="expertise">
+            <h2>Technical Expertise</h2>
+            <div class="skill-item">
+                <p>Software Development</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-progress="92"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <p>Deep Learning & Computer Vision</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-progress="95"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <p>Machine Learning Research</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-progress="90"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <p>PyTorch & Deep Learning Frameworks</p>
+                <div class="skill-bar">
+                    <div class="skill-progress" data-progress="94"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Focus</h2>
+            <p>Currently advancing research in self-supervised learning while working as an SDE. My research interests include:</p>
+            <div class="tech-stack">
+                <span class="tech-tag">Self supervised Learning</span>
+                <span class="tech-tag">Contrastive Learning</span>
+                <span class="tech-tag">Deep Learning</span>
+                <span class="tech-tag">Class Imbalanced Problem </span>
+                <span class="tech-tag">Image Processing</span>
+                <span class="tech-tag">Siamese Networks</span>
+                <span class="tech-tag">Neural Networks</span>
+                <span class="tech-tag">Computer Vision</span>
+                <span class="tech-tag">PyTorch</span>
+                <span class="tech-tag">OpenCV</span>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Let's Connect</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    📧 <a href="mailto:abhishekjha3515@gmail.com">abhishekjha3515@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://www.linkedin.com/in/abhishek-kumar-bb21121a1/">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://www.linkedin.com/in/abhishek-kumar-bb21121a1/">GitHub</a>
+                </div>
+                
+            </div>
+        </section>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize skill bars
+            const skillBars = document.querySelectorAll('.skill-progress');
+            skillBars.forEach(bar => {
+                const progress = bar.getAttribute('data-progress');
+                setTimeout(() => {
+                    bar.style.width = `${progress}%`;
+                }, 300);
+            });
+
+            // Theme toggle
+            const themeToggle = document.querySelector('.theme-toggle');
+            themeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+            });
+
+            // Add hover effect to tech tags
+            const techTags = document.querySelectorAll('.tech-tag');
+            techTags.forEach(tag => {
+                tag.addEventListener('mouseover', () => {
+                    tag.style.transform = 'scale(1.05)';
+                });
+                tag.addEventListener('mouseout', () => {
+                    tag.style.transform = 'scale(1)';
+                });
+            });
+
+            // Smooth scroll for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
