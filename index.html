@@ -1,375 +1,631 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhishek Kumar - Software Developer & Researcher</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Kumar | Research Portfolio &amp; Perception Systems</title>
+  <meta name="description" content="Research portfolio of Abhishek Kumar. Specializing in self-supervised representation learning, contrastive learning under class imbalance, continuous-time LiDAR odometry, and multi-modal sensor calibration.">
+  <meta name="author" content="Abhishek Kumar">
 
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #4f46e5;
-            --accent-color: #ec4899;
-            --gradient-start: #6366f1;
-            --gradient-end: #ec4899;
-            --bg-color: #ffffff;
-            --text-color: #1f2937;
-            --secondary-bg: #f8fafc;
-            --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
+  <!-- Core Academic Stylesheet -->
+  <link rel="stylesheet" href="assets/style.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: linear-gradient(135deg, #f6f8ff 0%, #ffffff 100%);
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        header {
-            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
-            padding: 4rem 0;
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-            margin-bottom: 1.5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        h1 {
-            color: white;
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        .title {
-            color: white;
-            font-size: 1.4rem;
-            opacity: 0.9;
-        }
-
-        section {
-            background: var(--bg-color);
-            border-radius: 20px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.3s ease;
-            opacity: 1;
-            transform: translateY(0);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-        }
-
-        section:hover {
-            transform: translateY(-5px);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        h2::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 3px;
-            background: linear-gradient(to right, var(--gradient-start), var(--gradient-end));
-            transition: width 0.3s ease;
-        }
-
-        section:hover h2::after {
-            width: 100%;
-        }
-
-        .tech-stack {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-
-        .tech-tag {
-            background: var(--secondary-bg);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .tech-tag:hover {
-            background: var(--primary-color);
-            color: white;
-            transform: scale(1.05);
-        }
-
-        .skill-item {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-item p {
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .skill-bar {
-            height: 12px;
-            background: var(--secondary-bg);
-            border-radius: 6px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
-            width: 0;
-            border-radius: 6px;
-            transition: width 1s ease-out;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .contact-item {
-            background: var(--secondary-bg);
-            padding: 1rem 1.5rem;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-item:hover {
-            transform: translateX(10px);
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-        }
-
-        .contact-item:hover a {
-            color: white;
-        }
-
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .theme-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: none;
-            background: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .theme-toggle:hover {
-            transform: rotate(180deg);
-        }
-
-        /* Dark mode styles */
-        body.dark-mode {
-            --bg-color: #0f172a;
-            --text-color: #e2e8f0;
-            --secondary-bg: #1e293b;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-        }
-
-        /* Responsive design */
-        @media (max-width: 768px) {
-            header {
-                padding: 3rem 0;
-            }
-
-            h1 {
-                font-size: 2.2rem;
-            }
-
-            .title {
-                font-size: 1.2rem;
-            }
-
-            section {
-                padding: 1.5rem;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+  <!-- KaTeX for crisp mathematical formulas -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" onload="renderMathInElement(document.body, {delimiters: [{left: '$$', right: '$$', display: true}, {left: '$', right: '$', display: false}]});"></script>
 </head>
-<body class="dark-mode">
-    <button class="theme-toggle" aria-label="Toggle theme">🌓</button>
+<body>
 
-    <header>
-        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFL5zraCJVLqw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1688663855815?e=1740009600&v=beta&t=ES2aOTO8bJMCy17FvjR4c6FzN9CiVA1gzWKGWV_UJjo" alt="Abhishek Kumar" class="profile-img" >
-        <h1>Abhishek Kumar</h1>
-        <p class="title">Software Development Engineer & ML Researcher</p>
-    </header>
+  <!-- Sticky Academic Navbar -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#about" class="nav-brand">Abhishek Kumar</a>
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#systems" class="nav-link">Perception Systems</a></li>
+        <li><a href="#opensource" class="nav-link">Open Source</a></li>
+        <li><a href="#writing" class="nav-link">Writing</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><button class="theme-toggle-btn" aria-label="Toggle dark mode">🌓</button></li>
+      </ul>
+    </div>
+  </header>
 
-    <div class="container">
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hi there! 👋 I’m a Software Development Engineer with a deep passion for Computer Vision and Deep Learning. My journey started at IIT Kharagpur, where I earned my M.Tech and delved into cutting-edge research in self-supervised learning techniques. Today, I thrive at the intersection of research and development, creating innovative solutions in machine learning.I specialize in designing systems that harness the power of contrastive learning and Siamese architectures to solve real-world problems. Whether it’s pushing the boundaries of self-supervised learning or building impactful industry-grade applications, I’m always up for a challenge! 🚀Feel free to explore my work, projects, and thoughts on all things tech and AI. Let’s connect and create something extraordinary together!</p>
-            <!-- <p>I'm a Software Development Engineer with a strong research background in Computer Vision and Deep Learning. Following my M.Tech from IIT Kharagpur, I've transitioned into industry while continuing my passion for research in self-supervised learning techniques. My expertise lies in developing innovative solutions using machine learning, particularly in contrastive learning and Siamese architectures.</p> -->
-            <div class="tech-stack">
-                <span class="tech-tag">Computer Vision</span>
-                <span class="tech-tag">Deep Learning</span>
-                <span class="tech-tag">Self-Supervised Learning</span>
-                <span class="tech-tag">Embedded System </span>
-                <span class="tech-tag">Software Development</span>
-            </div>
-        </section>
+  <main class="container">
 
-        <section id="expertise">
-            <h2>Technical Expertise</h2>
-            <div class="skill-item">
-                <p>Software Development</p>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-progress="92"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <p>Deep Learning & Computer Vision</p>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-progress="95"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <p>Machine Learning Research</p>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-progress="90"></div>
-                </div>
-            </div>
-            <div class="skill-item">
-                <p>PyTorch & Deep Learning Frameworks</p>
-                <div class="skill-bar">
-                    <div class="skill-progress" data-progress="94"></div>
-                </div>
-            </div>
-        </section>
+    <!-- Hero / Profile Header -->
+    <section id="about" class="hero-section">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <h1>Abhishek Kumar</h1>
+          <p class="hero-affiliation">
+            Perception Systems Engineer at <strong>Swaayatt Robots</strong> &middot; M.Tech, <strong>IIT Kharagpur</strong>
+          </p>
 
-        <section id="research">
-            <h2>Research Focus</h2>
-            <p>Currently advancing research in self-supervised learning while working as an SDE. My research interests include:</p>
-            <div class="tech-stack">
-                <span class="tech-tag">Self supervised Learning</span>
-                <span class="tech-tag">Contrastive Learning</span>
-                <span class="tech-tag">Fedrated Learning </span>
-                <span class="tech-tag">Deep Learning</span>
-                <span class="tech-tag">Class Imbalanced Problem </span>
-                <span class="tech-tag">Image Processing</span>
-                <span class="tech-tag">Siamese Networks</span>
-                <span class="tech-tag">Neural Networks</span>
-                <span class="tech-tag">Computer Vision</span>
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">OpenCV</span>
-            </div>
-        </section>
+          <p class="hero-bio">
+            I am a perception engineer and researcher preparing for PhD applications in Computer Vision and Robotics. Currently, I work on real-time continuous-time state estimation and multi-modal sensor calibration at <strong>Swaayatt Robots</strong>, while collaborating with the <strong>IPCV Lab at IIT Kharagpur</strong> on self-supervised and federated representation learning.
+          </p>
 
-        <section id="contact">
-            <h2>Let's Connect</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    📧 <a href="mailto:abhishekjha3515@gmail.com">abhishekjha3515@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    💼 <a href="https://www.linkedin.com/in/abhishek-kumar-bb21121a1/">LinkedIn</a>
-                </div>
-                <div class="contact-item">
-                    💼 <a href="https://github.com/Abhishekjha3515">GitHub</a>
-                </div>
-                
-            </div>
-        </section>
+          <div class="hero-links">
+            <a href="mailto:abhishekjha3515@gmail.com" class="hero-link-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              abhishekjha3515@gmail.com
+            </a>
+            <a href="https://github.com/Abhishekjha3515" target="_blank" class="hero-link-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+              GitHub
+            </a>
+            <a href="https://in.linkedin.com/in/abhishek-kumar-bb21121a1/" target="_blank" class="hero-link-pill">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <span class="hero-link-pill" style="cursor: default;">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/></svg>
+              Bhopal, India
+            </span>
+          </div>
+        </div>
+
+        <div class="hero-photo-wrapper">
+          <img src="assets/profile.png" alt="Abhishek Kumar" class="hero-photo">
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Statement Callout -->
+    <div class="research-statement">
+      <div style="font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700; color: var(--text-main); margin-bottom: 0.65rem;">
+        Research Interests
+      </div>
+      <p style="margin-bottom: 0.45rem;">
+        <strong>3D &amp; Perceptual Vision:</strong> 3D Scene Reconstruction (3DGS / NeRF) &middot; Visual Perception &middot; Self-Supervised Metric Learning
+      </p>
+      <p style="margin-bottom: 0.45rem;">
+        <strong>Representation Learning:</strong> Latent World Models &middot; Long-Tailed Class Imbalance &middot; Federated SSL &middot; Client Drift &middot; Adversarial Robustness
+      </p>
+      <p style="margin-bottom: 0;">
+        <strong>Robotics:</strong> Multi-Sensor SLAM &middot; Factor Graph Optimization &middot; 3D Detection &amp; Clustering &middot; State Estimation &middot; HD Metric Mapping
+      </p>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Initialize skill bars
-            const skillBars = document.querySelectorAll('.skill-progress');
-            skillBars.forEach(bar => {
-                const progress = bar.getAttribute('data-progress');
-                setTimeout(() => {
-                    bar.style.width = `${progress}%`;
-                }, 300);
-            });
+    <!-- Research Projects -->
+    <section id="research" class="section">
+      <div class="section-header">
+        <h2>Research Projects</h2>
+        <div class="section-rule"></div>
+      </div>
 
-            // Theme toggle
-            const themeToggle = document.querySelector('.theme-toggle');
-            themeToggle.addEventListener('click', () => {
-                document.body.classList.toggle("dark-mode")
-            });
+      <!-- Project 1: MACL (Thesis) -->
+      <div class="project-card featured">
+        <div class="project-meta-row">
+          <span class="badge status-merged">Upstream Merged into Lightly</span>
+          <span class="badge">M.Tech Thesis</span>
+          <span class="badge">IIT Kharagpur</span>
+        </div>
+        <h3 class="project-title">Adaptive Temperature in Contrastive Learning on Imbalanced Data</h3>
+        <p class="project-authors">
+          <strong>Abhishek Kumar</strong> &middot; Advisor: <strong>Prof. Debashis Sen</strong> &middot; Co-Advisor: <strong>Prof. Saumik Bhattacharya</strong> (M.Tech Thesis, 2023–2024)
+        </p>
+        <p class="project-summary">
+          Investigated representation collapse and tail-class gradient suppression in instance-based contrastive learning (SimCLR) on long-tailed benchmarks (CIFAR-10-LT, CIFAR-100-LT). When data exhibits heavy class imbalance, high-frequency head classes dominate the negative contrastive gradient field on the unit hypersphere $\mathbb{S}^{d-1}$, suppressing minority tail representations. Investigated and applied the <strong>Model-Aware Contrastive Learning (MACL)</strong> adaptive temperature strategy to imbalanced datasets, dynamically adapting temperature based on representation alignment $\tau_a = \tau_0 \cdot [1 + \alpha (A - A_0)]$ to mitigate head-class gradient dominance. Achieved a verified <strong>&gt;4 percentage-point gain</strong> in linear-probing accuracy over baseline SimCLR, reaching peak accuracies of <strong>73.36%</strong> on CIFAR-10-LT and <strong>36.91%</strong> on CIFAR-100-LT under high imbalance ($\beta = 0.1$). Contributed the MACL loss module upstream to the official <strong>Lightly</strong> PyTorch SSL repository (<code>lightly-ai/lightly</code>), merged into production releases.
+        </p>
 
-            // Add hover effect to tech tags
-            const techTags = document.querySelectorAll('.tech-tag');
-            techTags.forEach(tag => {
-                tag.addEventListener('mouseover', () => {
-                    tag.style.transform = 'scale(1.05)';
-                });
-                tag.addEventListener('mouseout', () => {
-                    tag.style.transform = 'scale(1)';
-                });
-            });
+        <div class="metrics-grid">
+          <div class="metric-item">
+            <div class="metric-val">&gt;4.0 pp</div>
+            <div class="metric-label">Gain over SimCLR on CIFAR-10-LT</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">73.36%</div>
+            <div class="metric-label">Peak Top-1 Accuracy (CIFAR-10-LT, &#946;=0.1)</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">36.91%</div>
+            <div class="metric-label">Peak Top-1 Accuracy (CIFAR-100-LT, &#946;=0.1)</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-val">Merged PR</div>
+            <div class="metric-label">Official Lightly PyTorch SSL Library</div>
+          </div>
+        </div>
 
-            // Smooth scroll for navigation
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
-                });
-            });
-        });
-    </script>
+        <div class="project-links">
+          <a href="https://github.com/lightly-ai/lightly" target="_blank" class="hero-link-pill primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Merged in Lightly (Official Upstream)
+          </a>
+          <button class="hero-link-pill" onclick="toggleBibtex('macl-home-bib')">Cite Thesis</button>
+        </div>
+
+        <div id="macl-home-bib" class="bibtex-box">
+          <div class="bibtex-code">
+            <button class="copy-btn" onclick="copyText(this, 'macl-home-bib-raw')">Copy</button>
+            <pre id="macl-home-bib-raw"><code>@mastersthesis{kumar2024macl,
+  author  = {Kumar, Abhishek},
+  title   = {Analysing Effect of Temperature in Instance-based Contrastive Learning on Imbalanced Data},
+  school  = {Indian Institute of Technology Kharagpur},
+  year    = {2024},
+  address = {Kharagpur, India},
+  note    = {Advisor: Prof. Debashis Sen; Co-Advisor: Prof. Saumik Bhattacharya}
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: PATS (Clean notice as requested by user) -->
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge status-prep">Manuscript in Preparation</span>
+          <span class="badge">Federated SSL</span>
+          <span class="badge">IPCV Lab, IIT Kharagpur</span>
+        </div>
+        <h3 class="project-title">Pairwise Adaptive Temperature Scaling (PATS) for Federated Representation Learning</h3>
+        <p class="project-authors">
+          <strong>Abhishek Kumar</strong>, <a href="https://sadimanna.github.io/" target="_blank">Dr. Siladittya Manna</a>, Dr. Saumik Bhattacharya &middot; <em>IPCV Lab, IIT Kharagpur (Sep 2024 – Present)</em>
+        </p>
+        <p class="project-summary">
+          Investigating pairwise adaptive temperature scaling mechanisms in federated self-supervised contrastive learning to resolve the Uniformity-Tolerance Dilemma and mitigate feature drift and representation collapse under non-IID decentralized client distributions. Formalizing theoretical bounds and empirical benchmarks across heterogeneous client partitionings.
+        </p>
+        <div class="callout-box note" style="margin-top: 0.85rem; margin-bottom: 0;">
+          <p style="margin: 0; font-size: 0.88rem; color: var(--text-muted);">
+            <em>&#8505; Note: This research is actively in preparation for submission. Full theoretical proofs, mathematical formulations, and benchmark results will be updated here once the manuscript is released on arXiv.</em>
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional Academic Research Projects -->
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge">Academic Research</span>
+          <span class="badge">IIT Kharagpur</span>
+        </div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Decoupled Contrastive Learning for Sample-Efficient SSL</h4>
+        <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 0.6rem;">IIT Kharagpur &middot; Aug 2023 – Dec 2023</p>
+        <p class="project-summary">
+          Analyzed Negative-Positive Coupling (NPC) in standard InfoNCE, demonstrating how positive pair gradients are bound to negative sample cardinality in small-batch training regimes. Implemented Decoupled Contrastive Learning (DCL) in PyTorch, removing the denominator coupling term to achieve sample-efficient representations while maintaining robust hyperparameter stability across benchmarks.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge">Research Internship</span>
+          <span class="badge">IPCV Lab, IIT Kharagpur</span>
+        </div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem;">Siamese Metric Representation Learning for Visual Similarity</h4>
+        <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 0.6rem;">IPCV Lab, IIT Kharagpur &middot; May 2023 – Jul 2023</p>
+        <p class="project-summary">
+          Designed a dual-branch Siamese representation learning framework incorporating InfoNCE loss to optimize metric distance spaces for visual similarity and deep feature correspondence.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge">Academic Project</span>
+          <span class="badge">Deep Motion Estimation</span>
+          <span class="badge">PyTorch</span>
+        </div>
+        <h4 style="font-size: 1.15rem; margin-bottom: 0.35rem;">FlowNet: Optical Flow Estimation</h4>
+        <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 0.6rem;">IIT Kharagpur &middot; Feb 2023 – Mar 2023</p>
+        <div class="project-summary">
+          <ul style="padding-left: 1.2rem; margin-bottom: 0; line-height: 1.6;">
+            <li>Implemented classical block-matching baselines and built synthetic datasets to evaluate motion estimation across diverse scenes.</li>
+            <li>Fine-tuned FlowNet architecture via transfer learning to estimate dense optical flow fields under non-rigid motion dynamics.</li>
+            <li>Evaluated end-point error (EPE), achieving substantial motion estimation accuracy gains over classical block-matching baselines.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industrial R&D and Systems Engineering -->
+    <section id="systems" class="section">
+      <div class="section-header">
+        <h2>Industrial R&amp;D &amp; Systems Engineering</h2>
+        <div class="section-rule"></div>
+      </div>
+      <div style="margin-bottom: 1.5rem;">
+        <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">
+          Perception Systems Engineer (R&amp;D) &middot; <span style="font-weight: 500; color: var(--text-muted);">Swaayatt Robots</span>
+        </h3>
+        <p style="color: var(--text-faint); font-size: 0.88rem; margin-bottom: 0.5rem; font-family: var(--font-mono);">
+          Bhopal, India &middot; Apr 2025 – Present
+        </p>
+        <p style="color: var(--text-muted); font-size: 0.94rem; margin-bottom: 0;">
+          Developing real-time continuous-time state estimation, multi-modal calibration, and dataset infrastructure for autonomous driving.
+        </p>
+      </div>
+
+      <div class="robotics-grid">
+
+        <!-- System 1: Continuous Odometry -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">State Estimation</span>
+              <h3>Continuous-Time LiDAR–Inertial Odometry &amp; Scan Deskewing</h3>
+            </div>
+            <span class="engineering-tag">C++ / ROS / PCL</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Formulated an asynchronous LiDAR–inertial state estimation pipeline to eliminate motion distortion across multi-LiDAR setups (Ouster OS1, Velodyne).</li>
+              <li>Modeled continuous-time scan deskewing via point-wise numerical IMU integration and quaternion propagation, registering unwarped sweeps via multi-threaded Generalized ICP (GICP) against local keyframe submaps.</li>
+              <li>Streamed low-drift odometry updates at ~100 Hz from 10 Hz raw sweeps in real time on edge compute.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 2: 4D Radar-LiDAR Calibration -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Multi-Sensor Calibration</span>
+              <h3>Targetless 4D Radar–LiDAR Extrinsic Calibration</h3>
+            </div>
+            <span class="engineering-tag">C++17 / ROS / Eigen</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Engineered an automated 6-DOF extrinsic calibration package between an Altos 77 GHz FMCW 4D Imaging Radar and Ouster OS1 LiDAR without artificial targets.</li>
+              <li>Isolated static structure using 2.5-D lower-envelope ground segmentation with slope diffusion (0.35 m/cell) and a 4-tier Doppler gating filter; solved rigid transforms via a closed-form weighted Kabsch SVD Procrustes solver inside RANSAC.</li>
+              <li>Enabled reliable extrinsic self-calibration in dynamic operational environments without requiring fiducial markers.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 3: Camera-LiDAR Calibration -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Spatial Optimization</span>
+              <h3>On-the-Fly Camera–LiDAR Extrinsic Calibration Tool</h3>
+            </div>
+            <span class="engineering-tag">Python / C++ / OpenCV</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Engineered an on-the-fly multi-sensor extrinsic calibration tool capable of operating across arbitrary real-world environments without specialized targets, coupling sub-pixel fiducials with deep feature matchers via focal-adaptive LiDAR splats.</li>
+              <li>Formulated Trust Region Reflective (TRF) non-linear least squares optimization with dynamic Cauchy robust loss and geodesic angular step validation.</li>
+              <li>Reduced multi-modal reprojection error from 267.23 px down to 1.987 px RMSE, fully automating production calibration in dynamic operational environments.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 4: SAM2 Annotation -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Dataset Infrastructure</span>
+              <h3>Dual-Modal Deep HD-Map Annotation System</h3>
+            </div>
+            <span class="engineering-tag">C++ / PCL / OpenCV / SAM2</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Architected a 2D–3D cross-modal semantic annotation pipeline integrating local GPU-accelerated SAM2 with interactive click prompting.</li>
+              <li>Linked 2D segmentations to 3D <code>PointXYZL</code> point clouds via camera frustum culling, Euclidean clustering, and depth-based merging.</li>
+              <li>Achieved 60 FPS real-time rendering, 98% Run-Length Encoding (RLE) mask compression, and a verified 50–80% annotation throughput increase.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 5: Multi-LiDAR GroundGrid -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Perception Optimization</span>
+              <h3>Heterogeneous Multi-LiDAR GroundGrid Optimization</h3>
+            </div>
+            <span class="engineering-tag">C++ / Point Cloud Processing</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Diagnosed and resolved severe spatial under-segmentation (&gt;15 m) on an asymmetric 3-LiDAR vehicle rig (Center Ouster 128-ch vs. Front Velodyne 32-ch and Rear Velodyne 16-ch).</li>
+              <li>Restructured monolithic point-cloud processing into sensor-decoupled pipelines with adaptive grid resolutions (0.20–0.35 m) and distance-scaled elevation thresholds.</li>
+              <li>Balanced non-uniform beam densities across asymmetric sensors, ensuring continuous long-range traversability detection.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 6: Vehicle Ray-Casting -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Simulation &amp; Geometry</span>
+              <h3>Vehicle Sensor Placement &amp; Ray-Casting Visibility Simulation</h3>
+            </div>
+            <span class="engineering-tag">ROS / RViz / URDF</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Developed a sensor placement simulation and visibility analysis package for commercial vehicle platforms.</li>
+              <li>Integrated vehicle URDF CAD models with 3D ray-casting frustums in RViz and engineered an interactive 6-DOF controls interface.</li>
+              <li>Quantified blind spots and optimized multi-sensor coverage overlap across vehicle geometries prior to physical hardware mounting.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- System 7 & 8: Annotation Tools -->
+        <div class="engineering-card">
+          <div class="engineering-header">
+            <div>
+              <span class="badge status-r-and-d">Annotation Tools</span>
+              <h3>3D Point Cloud Annotation &amp; Convex Hull Partitioning Tools</h3>
+            </div>
+            <span class="engineering-tag">C++17 / PCL / Open3D / Python</span>
+          </div>
+          <div class="engineering-body">
+            <ul>
+              <li>Built a desktop 3D obstacle annotation application supporting PCD frame streaming, interactive point-picked box initialization, 6-DOF bounding-box manipulation, and structured XML exports consumable by 3D object detection pipelines.</li>
+              <li>Created an interactive labeling utility using Open3D and NumPy fitting 2D convex hulls with vertical Z-elevation slicing for rapid ground/obstacle spatial partitioning.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Open-Source Software -->
+    <section id="opensource" class="section">
+      <div class="section-header">
+        <h2>Open-Source Software &amp; Research Artifacts</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge status-merged">Upstream Contributor</span>
+          <span class="badge">PyTorch</span>
+          <span class="badge">Self-Supervised Learning</span>
+        </div>
+        <h3 class="project-title">
+          <a href="https://github.com/lightly-ai/lightly" target="_blank">Upstream Contributor to Lightly (<code>lightly-ai/lightly</code>)</a>
+        </h3>
+        <p class="project-summary">
+          Authored and merged the <strong>Model-Aware Contrastive Learning (MACL)</strong> loss function into the premier PyTorch self-supervised learning library. Code review covered numerical stability, unit tests, and multi-GPU distributed compatibility under PyTorch Distributed Data Parallel (DDP).
+        </p>
+        <div class="project-links">
+          <a href="https://github.com/lightly-ai/lightly" target="_blank" class="hero-link-pill primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            View Lightly Repository
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Writing & Articles -->
+    <section id="writing" class="section">
+      <div class="section-header">
+        <h2>Technical Writing &amp; Articles</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-meta-row">
+          <span class="badge">Technical Article</span>
+          <span class="badge">The Owl</span>
+          <span class="badge">Federated Learning</span>
+        </div>
+        <h3 class="project-title">
+          <a href="https://medium.com/the-owl/federated-learning-series-part-0-introduction-7d60e2163267" target="_blank">Federated Learning Series: Part 0 — Introduction</a>
+        </h3>
+        <p class="text-muted" style="font-size: 0.88rem; margin-bottom: 0.6rem;">Published in <em>The Owl</em> on Medium</p>
+        <p class="project-summary">
+          A foundational exploration of decentralized machine learning. Discusses the privacy challenges of centralized data aggregation and demonstrates the architectural shift of moving computation to decentralized client silos—training locally and aggregating model updates while preserving data sovereignty.
+        </p>
+        <div class="project-links">
+          <a href="https://medium.com/the-owl/federated-learning-series-part-0-introduction-7d60e2163267" target="_blank" class="hero-link-pill primary">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Read on Medium
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education & Experience Timeline -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2>Education &amp; Experience</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="timeline">
+        <!-- Experience 1: Swaayatt Robots -->
+        <div class="timeline-item">
+          <div class="timeline-date">Apr 2025 – Present</div>
+          <div class="timeline-content">
+            <h4>Swaayatt Robots</h4>
+            <p class="timeline-subtitle">Perception Systems Engineer (R&amp;D) &middot; Bhopal, India</p>
+            <p class="timeline-desc">
+              Leading R&amp;D on continuous-time LiDAR–inertial state estimation, targetless 4D radar–LiDAR extrinsic calibration, camera–LiDAR spatial optimization, and dual-modal deep annotation systems.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience 2: IPCV Lab, IIT Kharagpur -->
+        <div class="timeline-item">
+          <div class="timeline-date">Jan 2025 – Present</div>
+          <div class="timeline-content">
+            <h4>IPCV Lab, IIT Kharagpur</h4>
+            <p class="timeline-subtitle">Graduate Research Collaborator &middot; Supervisor: Prof. Saumik Bhattacharya</p>
+            <p class="timeline-desc">
+              Investigating pairwise adaptive temperature scaling mechanisms in federated self-supervised contrastive learning to mitigate feature drift and representation collapse under non-IID decentralized client distributions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Education 1: IIT Kharagpur -->
+        <div class="timeline-item">
+          <div class="timeline-date">2022 – 2024</div>
+          <div class="timeline-content">
+            <h4>Indian Institute of Technology (IIT) Kharagpur</h4>
+            <p class="timeline-subtitle">M.Tech in Vision and Intelligent Systems (VIPES, Dept. of E&amp;ECE) &middot; <strong>CGPA: 7.95 / 10.0</strong></p>
+            <p class="timeline-desc">
+              <strong>Thesis:</strong> <em>Analysing Effect of Temperature in Instance-based Contrastive Learning on Imbalanced Data</em><br>
+              Advisor: Prof. Debashis Sen &middot; Department of Electronics &amp; Electrical Communication Engineering.
+            </p>
+          </div>
+        </div>
+
+        <!-- Education 2: BIT Mesra -->
+        <div class="timeline-item">
+          <div class="timeline-date">2018 – 2022</div>
+          <div class="timeline-content">
+            <h4>Birla Institute of Technology (BIT) Mesra</h4>
+            <p class="timeline-subtitle">B.Tech in Electronics and Communication Engineering &middot; <strong>CGPA: 7.46 / 10.0</strong></p>
+            <p class="timeline-desc">
+              Foundations in digital signal processing, linear algebra, embedded systems, and pattern recognition. Mentored by Dr. Ankur Agarwal.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching & Academic Service -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Teaching Assistance &amp; Mentorship</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Autumn 2024</div>
+          <div class="timeline-content">
+            <h4>Graduate Teaching Assistant (TA) &middot; IIT Kharagpur</h4>
+            <p class="timeline-subtitle">Courses: <strong>Signals and Systems</strong> &amp; <strong>Intelligent System Design Lab</strong></p>
+            <p class="timeline-desc">
+              Appointed TA for undergraduate departmental courses. Led weekly tutorial problem-solving sessions, graded assignments and laboratory exams, and guided hands-on simulation and hardware laboratories.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Autumn 2024</div>
+          <div class="timeline-content">
+            <h4>Undergraduate Project Mentor &middot; IIT Kharagpur</h4>
+            <p class="timeline-subtitle">Focus: <strong>DINO Vision Transformers</strong></p>
+            <p class="timeline-desc">
+              Mentored undergraduate students implementing self-supervised visual representations using the DINO Vision Transformer framework, guiding attention map evaluations and representation quality analysis.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills & Coursework -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Technical Core &amp; Coursework</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="project-card">
+        <p><strong>Core Research Domains:</strong> Self-Supervised Representation Learning, Contrastive Learning, Long-Tailed Class Imbalance, 3D Computer Vision, Continuous-Time State Estimation, Multi-Modal Sensor Calibration, Point Cloud Geometry, Sensor Fusion under Uncertainty.</p>
+        <p><strong>Programming Languages:</strong> Python, C++ (C++14/C++17, STL), C, SQL, Shell Scripting.</p>
+        <p><strong>Libraries &amp; Frameworks:</strong> PyTorch, Lightly, ROS 1 (Noetic/Melodic, ActionLib, Nodelets, TF2), PCL (Point Cloud Library), OpenCV, Open3D, Eigen3, NumPy, SciPy.</p>
+        <p><strong>Optimization &amp; Geometry:</strong> Non-Linear Least Squares (Trust Region Reflective, Cauchy Loss), SVD Procrustes (Kabsch), PnP-RANSAC, Convex Hulls, Lie Groups ($SO(3)$, $SE(3)$), Quaternion Kinematics.</p>
+        <p><strong>Platforms &amp; Hardware:</strong> Linux, NVIDIA Jetson (Embedded Linux), CUDA GPU Acceleration, CMake, Git, RViz, URDF.</p>
+        <p style="margin-bottom: 0;"><strong>Graduate Coursework (IIT Kharagpur):</strong> Pattern Recognition and Machine Learning &middot; Deep Learning: Foundations and Applications &middot; Computer Vision &middot; Digital Image Processing &middot; Statistics and Estimation Theory &middot; Linear Algebra for Signals and Systems &middot; Natural Language Processing.</p>
+      </div>
+    </section>
+
+    <!-- Academic References -->
+    <section class="section">
+      <div class="section-header">
+        <h2>Academic References</h2>
+        <div class="section-rule"></div>
+      </div>
+
+      <div class="references-grid">
+        <div class="reference-card">
+          <div class="reference-name">Dr. Debashis Sen</div>
+          <div class="reference-role">
+            Associate Professor<br>
+            Dept. of Electronics &amp; Electrical Communication Engineering<br>
+            Indian Institute of Technology Kharagpur
+          </div>
+          <div class="reference-email">
+            <em>Thesis Advisor</em><br>
+            Email: <a href="mailto:dsen@ece.iitkgp.ac.in">dsen@ece.iitkgp.ac.in</a>
+          </div>
+        </div>
+
+        <div class="reference-card">
+          <div class="reference-name">Dr. Saumik Bhattacharya</div>
+          <div class="reference-role">
+            Assistant Professor<br>
+            Dept. of Electronics &amp; Electrical Communication Engineering<br>
+            Indian Institute of Technology Kharagpur
+          </div>
+          <div class="reference-email">
+            <em>Thesis Co-Advisor &amp; Research Supervisor</em><br>
+            Email: <a href="mailto:saumik@ece.iitkgp.ac.in">saumik@ece.iitkgp.ac.in</a>
+          </div>
+        </div>
+
+        <div class="reference-card">
+          <div class="reference-name">
+            <a href="https://scholar.google.co.in/citations?user=JoST1C0AAAAJ&amp;hl=en" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 3px;">Dr. Ritwik Kumar Layek</a>
+          </div>
+          <div class="reference-role">
+            Associate Professor<br>
+            Dept. of Electronics &amp; Electrical Communication Engineering<br>
+            Indian Institute of Technology Kharagpur
+          </div>
+          <div class="reference-email">
+            <em>Faculty Reference</em><br>
+            Email: <a href="mailto:ritwik@ece.iitkgp.ac.in">ritwik@ece.iitkgp.ac.in</a>
+          </div>
+        </div>
+
+        <div class="reference-card">
+          <div class="reference-name">Dr. Ankur Agarwal</div>
+          <div class="reference-role">
+            Assistant Professor<br>
+            Dept. of Electronics and Communication Engineering<br>
+            Birla Institute of Technology (BIT) Mesra
+          </div>
+          <div class="reference-email">
+            <em>B.Tech Mentor</em><br>
+            Email: <a href="mailto:ankur@bitmesra.ac.in">ankur@bitmesra.ac.in</a>
+          </div>
+        </div>
+
+        <div class="reference-card">
+          <div class="reference-name">
+            <a href="https://sadimanna.github.io/" target="_blank" style="color: inherit; text-decoration: underline; text-decoration-color: var(--border-color); text-underline-offset: 3px;">Dr. Siladittya Manna</a>
+          </div>
+          <div class="reference-role">
+            Post-Doctoral Fellow (ANRF Fellow)<br>
+            Indian Institute of Science (IISc), Bangalore<br>
+            Alumnus, Indian Statistical Institute (ISI)
+          </div>
+          <div class="reference-email">
+            <em>Research Collaborator (PATS)</em><br>
+            Email: <a href="mailto:siladittyam@iisc.ac.in">siladittyam@iisc.ac.in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Academic Footer -->
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <p>&copy; 2026 Abhishek Kumar &middot; Academic Research Portfolio</p>
+      </div>
+      <div>
+        <a href="#about">Top</a> &middot;
+        <a href="https://github.com/Abhishekjha3515" target="_blank">GitHub</a> &middot;
+        <a href="https://in.linkedin.com/in/abhishek-kumar-bb21121a1/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/main.js"></script>
 </body>
 </html>

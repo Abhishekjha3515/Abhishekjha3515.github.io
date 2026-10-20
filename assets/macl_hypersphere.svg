@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 320" width="100%" height="100%">
+  <defs>
+    <style>
+      .box { fill: #ffffff; stroke: #e5e2db; stroke-width: 1.5; rx: 6px; }
+      .title { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 13px; font-weight: 700; fill: #1c1917; }
+      .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; font-size: 11px; fill: #57534e; }
+      .math { font-family: "JetBrains Mono", Consolas, monospace; font-size: 11px; fill: #44403c; }
+      .sphere { fill: none; stroke: #d6d3d1; stroke-width: 2; stroke-dasharray: 4,4; }
+      .head-pt { fill: #44403c; }
+      .tail-pt { fill: #c2410c; }
+    </style>
+  </defs>
+
+  <rect width="880" height="320" fill="#ffffff" rx="8" stroke="#e5e2db" />
+
+  <!-- Panel 1: Standard SimCLR on Long-Tail Imbalance -->
+  <g transform="translate(20, 20)">
+    <rect class="box" width="410" height="280" />
+    <text x="20" y="30" class="title" fill="#881337">Standard Contrastive Learning (Fixed &#964; = 0.1)</text>
+    <text x="20" y="48" class="text">Head classes dominate repulsive gradients on S^(d-1)</text>
+
+    <!-- Circle hypersphere -->
+    <circle cx="160" cy="140" r="70" class="sphere" />
+
+    <!-- Head classes: densely packed cluster dominating hypersphere -->
+    <ellipse cx="140" cy="95" rx="35" ry="18" fill="#f5f3ef" stroke="#a8a29e" stroke-dasharray="2,2" />
+    <circle cx="130" cy="90" r="4" class="head-pt" /><circle cx="145" cy="85" r="4" class="head-pt" />
+    <circle cx="155" cy="95" r="4" class="head-pt" /><circle cx="135" cy="102" r="4" class="head-pt" />
+    <circle cx="150" cy="105" r="4" class="head-pt" /><circle cx="120" cy="98" r="4" class="head-pt" />
+    <text x="185" y="85" class="math" fill="#44403c">Head Classes (Crowded)</text>
+
+    <!-- Tail classes: suppressed and collapsed into tiny corner -->
+    <circle cx="210" cy="175" r="4" class="tail-pt" /><circle cx="214" cy="179" r="4" class="tail-pt" />
+    <text x="225" y="180" class="math" fill="#c2410c">Tail Class (Suppressed)</text>
+    
+    <!-- Big repulsive arrow from head to tail -->
+    <path d="M 160 115 L 205 165" stroke="#991b1b" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="125" y="170" class="math" fill="#991b1b">&#8711; Repulsive Dominance</text>
+
+    <rect x="20" y="225" width="370" height="42" fill="#fff1f2" rx="4" stroke="#fecdd3" />
+    <text x="30" y="242" class="text" fill="#881337">&#10006; Tail-class representation collapse (Low intra-class variance)</text>
+    <text x="30" y="258" class="text" fill="#881337">&#10006; CIFAR-10-LT baseline limited to 68.9% accuracy</text>
+  </g>
+
+  <!-- Panel 2: Model-Aware Contrastive Learning (MACL) -->
+  <g transform="translate(450, 20)">
+    <rect class="box" width="410" height="280" stroke="#d6d3d1" />
+    <text x="20" y="30" class="title" fill="#166534">Model-Aware Contrastive Learning (MACL)</text>
+    <text x="20" y="48" class="text">Dynamic alignment temperature: &#964;_a = [1 + &#945;(A - A_0)] &#183; &#964;_0</text>
+
+    <!-- Circle hypersphere -->
+    <circle cx="160" cy="140" r="70" class="sphere" stroke="#16a34a" />
+
+    <!-- Head classes: uniformly distributed cluster -->
+    <ellipse cx="130" cy="95" rx="25" ry="15" fill="#f5f3ef" stroke="#a8a29e" />
+    <circle cx="120" cy="92" r="4" class="head-pt" /><circle cx="135" cy="88" r="4" class="head-pt" />
+    <circle cx="138" cy="100" r="4" class="head-pt" />
+    <text x="160" y="85" class="math" fill="#44403c">Head: Well-Separated</text>
+
+    <!-- Tail classes: preserved semantic radius and volume -->
+    <ellipse cx="195" cy="170" rx="25" ry="15" fill="#fff7ed" stroke="#fdba74" />
+    <circle cx="190" cy="168" r="4" class="tail-pt" /><circle cx="205" cy="172" r="4" class="tail-pt" />
+    <text x="140" y="205" class="math" fill="#c2410c">Tail: Protected Geometry</text>
+
+    <rect x="20" y="225" width="370" height="42" fill="#f0fdf4" rx="4" stroke="#bbf7d0" />
+    <text x="30" y="242" class="text" fill="#166534">&#10004; Verified +4 pp gain; Peak 73.36% on CIFAR-10-LT</text>
+    <text x="30" y="258" class="text" fill="#166534">&#10004; Merged upstream into official Lightly SSL repository</text>
+  </g>
+</svg>
