@@ -4,12 +4,12 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Theme Toggle (Dark / Light Mode)
+  // 1. Theme Toggle (Default: Light / White Mode)
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
   const storedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-  if (storedTheme === 'dark' || (!storedTheme && systemPrefersDark)) {
+  // Always default to white mode unless the user explicitly chose dark
+  if (storedTheme === 'dark') {
     document.body.classList.add('dark-mode');
     updateThemeToggleIcons(true);
   } else {
