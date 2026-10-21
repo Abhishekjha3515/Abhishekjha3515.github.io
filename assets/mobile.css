@@ -281,16 +281,20 @@ html.dark-mode .mobile-btn.primary, body.dark-mode .mobile-btn.primary {
 }
 
 .mobile-section-title {
-  font-family: var(--font-serif);
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--text-main);
   margin-bottom: 0.85rem;
   padding-bottom: 0.35rem;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+}
+
+.mobile-section-title h2 {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
 }
 
 .mobile-section-badge {
