@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Abhishek Kumar — Academic Research Portfolio (Mobile)</title>
+  <meta name="description" content="Mobile research portfolio of Abhishek Kumar. Perception Systems Engineer at Swaayatt Robots and Graduate Research Collaborator at IIT Kharagpur.">
+  <link rel="stylesheet" href="assets/mobile.css">
+  
+  <script>
+    // Theme initialization (always default to light mode unless explicitly set to dark)
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+    }
+  </script>
+</head>
+<body>
+
+  <!-- Top Sticky Bar -->
+  <header class="mobile-top-bar">
+    <a href="#top" class="mobile-logo">Abhishek Kumar</a>
+    <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle theme">
+      <span>🌓</span> Theme
+    </button>
+  </header>
+
+  <!-- Sticky Quick Navigation Pills -->
+  <nav class="mobile-pills-nav" aria-label="Section navigation">
+    <a href="#research" class="pill-link">Research</a>
+    <a href="#robotics" class="pill-link">Robotics R&amp;D</a>
+    <a href="#opensource" class="pill-link">Open Source</a>
+    <a href="#writing" class="pill-link">Writing</a>
+    <a href="#experience" class="pill-link">Experience</a>
+    <a href="#references" class="pill-link">References</a>
+  </nav>
+
+  <main class="mobile-container" id="top">
+
+    <!-- Profile Header Card -->
+    <section class="mobile-hero">
+      <div class="mobile-hero-head">
+        <img src="assets/profile.jpg" alt="Abhishek Kumar" class="mobile-avatar">
+        <div class="mobile-name-col">
+          <h1>Abhishek Kumar</h1>
+          <p class="mobile-headline">
+            Perception Systems Engineer at <strong>Swaayatt Robots</strong> &middot; M.Tech, <strong>IIT Kharagpur</strong>
+          </p>
+        </div>
+      </div>
+
+      <p class="mobile-bio">
+        I am a perception engineer and researcher focused on continuous-time state estimation, multi-modal sensor calibration, and self-supervised representation learning. Currently working at <strong>Swaayatt Robots</strong> while collaborating with the <strong>IPCV Lab at IIT Kharagpur</strong>.
+      </p>
+
+      <div class="mobile-actions">
+        <a href="mailto:abhishekjha3515@gmail.com" class="mobile-btn primary">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+        </a>
+        <a href="https://github.com/Abhishekjha3515" target="_blank" class="mobile-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          GitHub
+        </a>
+        <a href="https://in.linkedin.com/in/abhishek-kumar-bb21121a1/" target="_blank" class="mobile-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section class="mobile-interests">
+      <h2>Research Interests</h2>
+      <div class="mobile-interest-group">
+        <strong>3D &amp; Perceptual Vision:</strong> 3D Scene Reconstruction (3DGS / NeRF) &middot; Visual Perception &middot; Self-Supervised Metric Learning
+      </div>
+      <div class="mobile-interest-group">
+        <strong>Representation Learning:</strong> Latent World Models &middot; Long-Tailed Class Imbalance &middot; Federated SSL &middot; Client Drift &middot; Adversarial Robustness
+      </div>
+      <div class="mobile-interest-group">
+        <strong>Robotics:</strong> Multi-Sensor SLAM &middot; Factor Graph Optimization &middot; 3D Detection &amp; Clustering &middot; State Estimation &middot; HD Metric Mapping
+      </div>
+    </section>
+
+    <!-- Research Projects -->
+    <section id="research" class="mobile-section">
+      <div class="mobile-section-title">
+        <span>Research Projects</span>
+        <span class="mobile-section-badge">SSL / Vision</span>
+      </div>
+
+      <!-- Project 1: MACL -->
+      <div class="mobile-card featured">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge merged">Merged into Lightly</span>
+          <span class="mobile-badge">M.Tech Thesis</span>
+          <span class="mobile-badge">IIT Kharagpur</span>
+        </div>
+        <h3>Adaptive Temperature in Contrastive Learning on Imbalanced Data</h3>
+        <p class="mobile-card-meta">
+          <strong>Abhishek Kumar</strong> &middot; Advisor: <strong>Prof. Debashis Sen</strong> &middot; Co-Advisor: <strong>Prof. Saumik Bhattacharya</strong> (2023–2024)
+        </p>
+        <p>
+          Investigated tail-class gradient suppression in instance-based contrastive learning under long-tailed imbalance. Applied Model-Aware Contrastive Learning (MACL) to dynamically calibrate alignment temperature, achieving a verified &gt;4 pp linear probing gain (73.36% on CIFAR-10-LT). Merged upstream into official Lightly SSL repository.
+        </p>
+      </div>
+
+      <!-- Project 2: PATS -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge prep">In Preparation</span>
+          <span class="mobile-badge">Federated SSL</span>
+          <span class="mobile-badge">IIT Kharagpur</span>
+        </div>
+        <h3>Pairwise Adaptive Temperature Scaling (PATS) for Federated Representation Learning</h3>
+        <p class="mobile-card-meta">
+          <strong>Abhishek Kumar</strong>, <a href="https://sadimanna.github.io/" target="_blank">Dr. Siladittya Manna</a>, Dr. Saumik Bhattacharya &middot; <em>IPCV Lab, IIT Kharagpur (Sep 2024 – Present)</em>
+        </p>
+        <p>
+          Investigating pairwise adaptive temperature scaling mechanisms in federated self-supervised contrastive learning to resolve the Uniformity-Tolerance Dilemma and mitigate client drift under non-IID decentralized client distributions. Full theoretical formulation to be added upon arXiv release.
+        </p>
+      </div>
+
+      <!-- Project 3: FlowNet -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">PyTorch</span>
+          <span class="mobile-badge">Motion Estimation</span>
+        </div>
+        <h3>FlowNet: Optical Flow Estimation</h3>
+        <p class="mobile-card-meta">IIT Kharagpur &middot; Feb 2023 – Mar 2023</p>
+        <ul>
+          <li>Implemented classical block-matching baselines and built synthetic evaluation datasets.</li>
+          <li>Fine-tuned FlowNet architecture via transfer learning to estimate dense optical flow fields under non-rigid motion dynamics.</li>
+          <li>Achieved substantial EPE accuracy gains over classical variational baselines.</li>
+        </ul>
+      </div>
+
+      <!-- Project 4: Decoupled SSL -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Sample Efficiency</span>
+          <span class="mobile-badge">PyTorch</span>
+        </div>
+        <h3>Decoupled Contrastive Learning</h3>
+        <p class="mobile-card-meta">IIT Kharagpur &middot; Aug 2023 – Dec 2023</p>
+        <p>
+          Analyzed Negative-Positive Coupling (NPC) in standard InfoNCE and implemented decoupled contrastive objectives in PyTorch, removing coupling terms to achieve sample-efficient representations under small-batch regimes.
+        </p>
+      </div>
+    </section>
+
+    <!-- Industrial R&D / Robotics -->
+    <section id="robotics" class="mobile-section">
+      <a id="systems" style="position:relative; top:-120px; display:block; visibility:hidden;"></a>
+      <div class="mobile-section-title">
+        <span>Perception Systems (R&amp;D)</span>
+        <span class="mobile-section-badge">Swaayatt Robots</span>
+      </div>
+
+      <!-- System 1 -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">State Estimation</span>
+          <span class="mobile-badge">C++ / ROS / PCL</span>
+        </div>
+        <h3>Continuous-Time LiDAR–Inertial Odometry &amp; Scan Deskewing</h3>
+        <ul>
+          <li>Formulated asynchronous LiDAR–inertial state estimation to eliminate motion distortion across multi-LiDAR setups (Ouster OS1, Velodyne).</li>
+          <li>Modeled continuous-time scan deskewing via point-wise numerical IMU integration and quaternion propagation, registering unwarped sweeps via multi-threaded GICP.</li>
+          <li>Streamed low-drift odometry updates at ~100 Hz from 10 Hz raw sweeps in real time on edge compute.</li>
+        </ul>
+      </div>
+
+      <!-- System 2 -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Multi-Sensor</span>
+          <span class="mobile-badge">C++17 / Eigen</span>
+        </div>
+        <h3>Targetless 4D Radar–LiDAR Extrinsic Calibration</h3>
+        <ul>
+          <li>Engineered automated 6-DOF extrinsic calibration between Altos 77 GHz FMCW 4D Radar and Ouster OS1 LiDAR without artificial targets.</li>
+          <li>Applied 2.5-D lower-envelope ground segmentation with 4-tier Doppler gating; solved rigid transforms via closed-form weighted Kabsch SVD Procrustes inside RANSAC.</li>
+        </ul>
+      </div>
+
+      <!-- System 3 -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Spatial Optimization</span>
+          <span class="mobile-badge">Python / OpenCV</span>
+        </div>
+        <h3>On-the-Fly Camera–LiDAR Extrinsic Calibration Tool</h3>
+        <ul>
+          <li>Engineered an on-the-fly calibration tool operating across arbitrary environments without specialized targets, coupling sub-pixel fiducials with deep feature matchers.</li>
+          <li>Formulated Trust Region Reflective (TRF) non-linear least squares optimization with dynamic Cauchy robust loss and geodesic angular validation.</li>
+          <li>Reduced reprojection error from 267.23 px down to 1.987 px RMSE.</li>
+        </ul>
+      </div>
+
+      <!-- System 4 -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Dataset Tools</span>
+          <span class="mobile-badge">SAM2 / PCL</span>
+        </div>
+        <h3>Dual-Modal Deep HD-Map Annotation System</h3>
+        <ul>
+          <li>Architected 2D–3D cross-modal semantic annotation pipeline integrating local GPU-accelerated SAM2 with interactive click prompting.</li>
+          <li>Linked 2D segmentations to 3D point clouds via camera frustum culling and Euclidean clustering with 60 FPS real-time rendering.</li>
+        </ul>
+      </div>
+
+      <!-- System 5 -->
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Real-Time Traversal</span>
+          <span class="mobile-badge">ROS / C++</span>
+        </div>
+        <h3>Multi-LiDAR GroundGrid &amp; Traversability Segmentation</h3>
+        <ul>
+          <li>Restructured point-cloud processing into sensor-decoupled pipelines with adaptive grid resolutions (0.20–0.35 m) and distance-scaled elevation thresholds.</li>
+          <li>Ensured continuous long-range traversability detection across asymmetric multi-sensor beam distributions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Open Source -->
+    <section id="opensource" class="mobile-section">
+      <div class="mobile-section-title">
+        <span>Open Source</span>
+        <span class="mobile-section-badge">Lightly AI</span>
+      </div>
+
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge merged">Upstream Contributor</span>
+          <span class="mobile-badge">PyTorch</span>
+        </div>
+        <h3>Contributor to Lightly SSL (<code>lightly-ai/lightly</code>)</h3>
+        <p>
+          Authored and merged the <strong>Model-Aware Contrastive Learning (MACL)</strong> loss module into the premier PyTorch self-supervised learning library with multi-GPU DDP compatibility and complete unit tests.
+        </p>
+        <a href="https://github.com/lightly-ai/lightly" target="_blank" class="mobile-btn primary">
+          View on GitHub &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Writing -->
+    <section id="writing" class="mobile-section">
+      <div class="mobile-section-title">
+        <span>Writing &amp; Articles</span>
+        <span class="mobile-section-badge">Medium</span>
+      </div>
+
+      <div class="mobile-card">
+        <div class="mobile-badge-row">
+          <span class="mobile-badge">Article</span>
+          <span class="mobile-badge">The Owl</span>
+        </div>
+        <h3>Federated Learning Series: Part 0 — Introduction</h3>
+        <p>
+          An introductory exploration into decentralized machine learning architectures, privacy guarantees, and paradigms that train on client data locally.
+        </p>
+        <a href="https://medium.com/the-owl/federated-learning-series-part-0-introduction-7d60e2163267" target="_blank" class="mobile-btn primary">
+          Read on Medium &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- Experience & Education -->
+    <section id="experience" class="mobile-section">
+      <div class="mobile-section-title">
+        <span>Education &amp; Experience</span>
+        <span class="mobile-section-badge">Timeline</span>
+      </div>
+
+      <div class="mobile-timeline-item">
+        <div class="mobile-timeline-year">Apr 2025 – Present</div>
+        <h4>Swaayatt Robots</h4>
+        <p class="mobile-timeline-subtitle">Perception Systems Engineer (R&amp;D) &middot; Bhopal, India</p>
+        <p class="mobile-timeline-desc">Leading R&amp;D on continuous-time state estimation, radar-LiDAR extrinsic calibration, and camera-LiDAR optimization.</p>
+      </div>
+
+      <div class="mobile-timeline-item">
+        <div class="mobile-timeline-year">Jan 2025 – Present</div>
+        <h4>IPCV Lab, IIT Kharagpur</h4>
+        <p class="mobile-timeline-subtitle">Graduate Research Collaborator &middot; Supervisor: Prof. Saumik Bhattacharya</p>
+        <p class="mobile-timeline-desc">Investigating pairwise adaptive temperature scaling mechanisms in federated self-supervised contrastive learning.</p>
+      </div>
+
+      <div class="mobile-timeline-item">
+        <div class="mobile-timeline-year">2022 – 2024</div>
+        <h4>Indian Institute of Technology (IIT) Kharagpur</h4>
+        <p class="mobile-timeline-subtitle">M.Tech in Vision &amp; Intelligent Systems &middot; CGPA: 7.95 / 10.0</p>
+        <p class="mobile-timeline-desc">Thesis: Analysing Effect of Temperature in Instance-based Contrastive Learning on Imbalanced Data. Advisor: Prof. Debashis Sen.</p>
+      </div>
+
+      <div class="mobile-timeline-item">
+        <div class="mobile-timeline-year">2018 – 2022</div>
+        <h4>Birla Institute of Technology (BIT) Mesra</h4>
+        <p class="mobile-timeline-subtitle">B.Tech in Electronics &amp; Communication &middot; CGPA: 7.46 / 10.0</p>
+        <p class="mobile-timeline-desc">Signal processing, linear algebra, embedded systems, and pattern recognition. Mentored by Dr. Ankur Agarwal.</p>
+      </div>
+    </section>
+
+    <!-- References -->
+    <section id="references" class="mobile-section">
+      <div class="mobile-section-title">
+        <span>Academic References</span>
+        <span class="mobile-section-badge">Advisors</span>
+      </div>
+
+      <div class="mobile-ref-card">
+        <div class="mobile-ref-name">Dr. Debashis Sen</div>
+        <div class="mobile-ref-role">Associate Professor, Dept. of E&amp;ECE, IIT Kharagpur<br><em>Thesis Advisor</em></div>
+        <div class="mobile-ref-email"><a href="mailto:dsen@ece.iitkgp.ac.in">dsen@ece.iitkgp.ac.in</a></div>
+      </div>
+
+      <div class="mobile-ref-card">
+        <div class="mobile-ref-name">Dr. Saumik Bhattacharya</div>
+        <div class="mobile-ref-role">Assistant Professor, Dept. of E&amp;ECE, IIT Kharagpur<br><em>Thesis Co-Advisor &amp; Research Supervisor</em></div>
+        <div class="mobile-ref-email"><a href="mailto:saumik@ece.iitkgp.ac.in">saumik@ece.iitkgp.ac.in</a></div>
+      </div>
+
+      <div class="mobile-ref-card">
+        <div class="mobile-ref-name">
+          <a href="https://scholar.google.co.in/citations?user=JoST1C0AAAAJ&amp;hl=en" target="_blank">Dr. Ritwik Kumar Layek</a>
+        </div>
+        <div class="mobile-ref-role">Associate Professor, Dept. of E&amp;ECE, IIT Kharagpur<br><em>Faculty Reference</em></div>
+        <div class="mobile-ref-email"><a href="mailto:ritwik@ece.iitkgp.ac.in">ritwik@ece.iitkgp.ac.in</a></div>
+      </div>
+
+      <div class="mobile-ref-card">
+        <div class="mobile-ref-name">Dr. Ankur Agarwal</div>
+        <div class="mobile-ref-role">Assistant Professor, Dept. of ECE, BIT Mesra<br><em>B.Tech Mentor</em></div>
+        <div class="mobile-ref-email"><a href="mailto:ankur@bitmesra.ac.in">ankur@bitmesra.ac.in</a></div>
+      </div>
+
+      <div class="mobile-ref-card">
+        <div class="mobile-ref-name">
+          <a href="https://sadimanna.github.io/" target="_blank">Dr. Siladittya Manna</a>
+        </div>
+        <div class="mobile-ref-role">Post-Doctoral Fellow (ANRF Fellow), IISc Bangalore<br><em>Research Collaborator (PATS)</em></div>
+        <div class="mobile-ref-email"><a href="mailto:siladittyam@iisc.ac.in">siladittyam@iisc.ac.in</a></div>
+      </div>
+    </section>
+
+    <!-- Mobile Footer -->
+    <footer class="mobile-footer">
+      <p>&copy; 2026 Abhishek Kumar &middot; Academic Portfolio</p>
+      <div class="mobile-footer-links">
+        <a href="#top">Back to Top &uarr;</a>
+        <a href="index.html?mode=desktop" id="force-desktop">Switch to Desktop Version</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    // Theme toggle interaction
+    const toggleBtn = document.getElementById('theme-toggle');
+    function updateMobileThemeIcon(isDark) {
+      toggleBtn.innerHTML = isDark ? '<span>☀️</span> Light' : '<span>🌓</span> Dark';
+      toggleBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+
+    // Sync body class and button label on load
+    const currentIsDark = document.documentElement.classList.contains('dark-mode');
+    document.body.classList.toggle('dark-mode', currentIsDark);
+    updateMobileThemeIcon(currentIsDark);
+
+    toggleBtn.addEventListener('click', () => {
+      const isDark = document.documentElement.classList.toggle('dark-mode');
+      document.body.classList.toggle('dark-mode', isDark);
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateMobileThemeIcon(isDark);
+    });
+
+    // If user clicked 'Switch to Desktop Version', persist choice
+    document.getElementById('force-desktop').addEventListener('click', () => {
+      sessionStorage.setItem('preferredView', 'desktop');
+    });
+  </script>
+
+</body>
+</html>

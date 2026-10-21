@@ -94,5 +94,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
-});
 
+  // 6. Mobile View Switch Persistence
+  const mobileLink = document.getElementById('switch-to-mobile');
+  if (mobileLink) {
+    mobileLink.addEventListener('click', () => {
+      sessionStorage.setItem('preferredView', 'mobile');
+    });
+  }
+});

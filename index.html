@@ -10,6 +10,33 @@
   <!-- Core Academic Stylesheet -->
   <link rel="stylesheet" href="assets/style.css">
 
+  <!-- Seamless Mobile Device Detection & Redirection -->
+  <script>
+    (function() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const modeParam = urlParams.get('mode');
+      if (modeParam === 'desktop') {
+        sessionStorage.setItem('preferredView', 'desktop');
+        return;
+      }
+      if (modeParam === 'mobile') {
+        sessionStorage.setItem('preferredView', 'mobile');
+        window.location.replace('mobile.html' + window.location.hash);
+        return;
+      }
+
+      const preferredView = sessionStorage.getItem('preferredView');
+      if (preferredView === 'desktop') return;
+
+      const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTouchSmallScreen = (window.innerWidth <= 768 && window.innerWidth > 0) && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
+      if (isMobileUA || preferredView === 'mobile' || isTouchSmallScreen) {
+        window.location.replace('mobile.html' + window.location.hash);
+      }
+    })();
+  </script>
+
   <!-- KaTeX for crisp mathematical formulas -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
@@ -620,6 +647,7 @@
       </div>
       <div>
         <a href="#about">Top</a> &middot;
+        <a href="mobile.html" id="switch-to-mobile">Mobile View</a> &middot;
         <a href="https://github.com/Abhishekjha3515" target="_blank">GitHub</a> &middot;
         <a href="https://in.linkedin.com/in/abhishek-kumar-bb21121a1/" target="_blank">LinkedIn</a>
       </div>
